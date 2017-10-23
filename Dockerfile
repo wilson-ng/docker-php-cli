@@ -27,7 +27,8 @@ RUN \
         pkg-config \
         uuid-dev \
         zlib1g-dev \
-        libpng-dev
+        libpng-dev \
+        libpq-dev
 
 #Install Ca Certificates
 RUN \
@@ -81,6 +82,7 @@ RUN docker-php-ext-install -j$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1
     xsl \
     gmp \
     pdo_sqlite \
+    pdo_pgsql \
     intl
 
 # Config PHP and NGINX
